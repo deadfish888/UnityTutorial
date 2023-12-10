@@ -15,6 +15,10 @@ public class PlatesCounter : BaseCounter
 
     private void Update()
     {
+        if (!KitchenChaosManager.Instance.IsPlaying())
+        {
+            return;
+        }
         spawnPlateTimer += Time.deltaTime;
         if (spawnPlateTimer > spawnPlateTimerMax)
         {
